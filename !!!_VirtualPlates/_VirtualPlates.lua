@@ -46,7 +46,8 @@ do
 	--- If an anchor ataches to the original plate (by WoW), re-anchor to the Visual.
 	local function ResetPoint ( Plate, Region, Point, RelFrame, ... )
 		if ( RelFrame == Plate ) then
-			Region:SetPoint( Point, Plates[ Plate ], ... );
+			local point, xOfs, yOfs = ...
+			Region:SetPoint( Point, Plates[ Plate ], point, xOfs, yOfs + 20 );
 		end
 	end
 
